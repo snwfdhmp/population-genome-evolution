@@ -110,6 +110,8 @@ int main(int argc, char const *argv[])
 	int n;
 	int gen = 2;
 	Humain generations[50][50];
+	int newHomme = 0;;
+	int newFemme = 0;
 
 	for (i=0; i < femmes; ++i)
 	{
@@ -120,10 +122,10 @@ int main(int argc, char const *argv[])
 		generations[gen][i].printSexe();
 		printf("\n");
 		if(generations[gen][i].genes[0].speaking() == 1) {
-			//hommes++;
+			newHomme++;
 		}
 		else {
-			//femmes++;
+			newFemme++;
 		}
 	}
 
