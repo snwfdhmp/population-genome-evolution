@@ -53,18 +53,29 @@ int main(int argc, char const *argv[])
 	Humain eve;
 	Humain martin;
 
+	printf("Création du sexe homme ... liste des allèles : X, Y\n");
 	sexeh.setAlleleL(X);
 	sexeh.setAlleleR(Y);
 
+	printf("Création du sexe femme ... liste des allèles : X, X\n");
 	sexef.setAlleleL(X);
 	sexef.setAlleleR(X);
 
+	printf("CREATION de ADAM avec SEXE HOMME\n");
 	adam.setNextGene(sexeh);
+	printf("CREATION de EVE avec SEXE FEMME\n");
 	eve.setNextGene(sexef);
 
+	printf("CREATION DE MARTIN à partir de REPRODUCTION de EVE par ADAM\n");
 	martin = eve.reproduce(&adam);
 
-	
+	printf("AFFICHAGE de GENE SEXUEL de MARTIN\n");
+	martin.printGene(0);
+
+	printf("AFFICHAGE de SEXE de MARTIN : ");
+	martin.printSexe();
+
+	printf("\n");
 
 	return 0;
 }

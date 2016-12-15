@@ -11,6 +11,10 @@ public:
 	int type; //définit grâces aux constantes de prépocesseur 
 	int alleles[2]; //tableau contenant l'ensemble des alleles
 
+	Gene() {
+		type = 0;
+	}
+
 	//Sorter
 	int speaking();
 	void sortAlleles();
@@ -28,6 +32,6 @@ public:
 	int setAlleleR(int a);
 
 	//Class Methods
-	Gene createFromParents(int geneM[1], int geneF[1]);
+	int createFromParents(int geneM[2], int geneF[2]);
 };
 #endif

@@ -42,7 +42,7 @@ int Gene::setAlleleR(int a) {
 }
 
 //Class Methods
-Gene::createFromParents(int geneM[1], int geneF[1]){
+int Gene::createFromParents(int geneM[2], int geneF[2]){
 	int u,v;
 	srand(time(NULL));
 
@@ -52,7 +52,7 @@ Gene::createFromParents(int geneM[1], int geneF[1]){
 	alleles[0] = geneM[u]; //give random between left and right of mother to its genome
 	alleles[1] = geneF[v]; //give random between .. of father ..
 	sortAlleles(); //sortAlleles
-	return speaking; //return the speaking
+	return speaking(); //return the speaking
 }
 
 //Gene::Gene() {}
