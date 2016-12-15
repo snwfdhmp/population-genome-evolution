@@ -5,4 +5,7 @@ echo "DERNIERE MAJ : $(date)" >> README.md
 git add *
 git commit -m "UPDATE"
 git push origin master
+echo "==============="
+echo "== README.md =="
+echo "==============="
 cat README.md
