@@ -118,7 +118,7 @@ int main(int argc, char const *argv[])
 	int newHomme = 0;;
 	int newFemme = 0;
 
-	for (gen = 2; gen <= 10; ++gen)
+	for (gen = 2; gen <= 2; ++gen)
 	{
 
 		for (i=0; i < femmes; ++i)
