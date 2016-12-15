@@ -118,28 +118,31 @@ int main(int argc, char const *argv[])
 	int newHomme = 0;;
 	int newFemme = 0;
 
-	for (i=0; i < femmes; ++i)
+	for (gen = 2; gen <= 10; ++gen)
 	{
-		n = rand() % hommes;
-		if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
-		generations[gen][i] = females[i]->reproduce(males[n]);
-		if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
-		if(DEBUG_MODE) generations[gen][i].printSexe();
-		if(DEBUG_MODE) printf("\n");
-		if(generations[gen][i].genes[0].speaking() == 1) {
-			males[hommes+newHomme] = &generations[gen][i];
-			newHomme++;
-		}
-		else {
-			females[femmes+newFemme] = &generations[gen][i];
-			newFemme++;
-		}
-	}
-	hommes+=newHomme;
-	femmes+=newFemme;
-	printf("NOUVEAUX HOMMES : %d\nNOUVELLES FEMMES : %d\n", newHomme, newFemme);
-	newHomme = 0;
-	newFemme = 0;
 
+		for (i=0; i < femmes; ++i)
+		{
+			n = rand() % hommes;
+			if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
+			generations[gen][i] = females[i]->reproduce(males[n]);
+			if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
+			if(DEBUG_MODE) generations[gen][i].printSexe();
+			if(DEBUG_MODE) printf("\n");
+			if(generations[gen][i].genes[0].speaking() == 1) {
+				males[hommes+newHomme] = &generations[gen][i];
+				newHomme++;
+			}
+			else {
+				females[femmes+newFemme] = &generations[gen][i];
+				newFemme++;
+			}
+		}
+		hommes+=newHomme;
+		femmes+=newFemme;
+		printf("NOUVEAUX HOMMES : %d, NOUVELLES FEMMES : %d, TOTAL HOMMES : %d, TOTAL FEMMES : %d\n", newHomme, newFemme, hommes, femmes);
+		newHomme = 0;
+		newFemme = 0;
+	}
 	return 0;
 }
