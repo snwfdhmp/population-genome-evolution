@@ -128,6 +128,7 @@ int main(int argc, char const *argv[])
 			newFemme++;
 		}
 	}
+	printf("NOUVEAUX HOMMES : %d\nNOUVELLES FEMMES : %d\n", newHomme, newFemme);
 
 	return 0;
 }
