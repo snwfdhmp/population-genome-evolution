@@ -5,7 +5,7 @@
 #include "Humain.h"
 
 //CONFIG
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 #define PI 3.141592
 
