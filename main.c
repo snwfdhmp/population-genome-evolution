@@ -5,7 +5,7 @@
 #include "Humain.h"
 
 //CONFIG
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1	
 
 #define PI 3.141592
 
@@ -115,7 +115,7 @@ int main(int argc, char const *argv[])
 	int n;
 	int gen = 2;
 	Humain generations[50][50];
-	int newHomme = 0;;
+	int newHomme = 0;
 	int newFemme = 0;
 
 	for (gen = 2; gen <= 2; ++gen)
