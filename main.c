@@ -5,11 +5,9 @@
 #include "Humain.h"
 
 //CONFIG
-#define DEBUG_MODE TRUE
+#define DEBUG_MODE 1
 
 #define PI 3.141592
-#define FALSE 0
-#define TRUE 1
 
 #define X 0
 #define Y 1
@@ -123,7 +121,7 @@ int main(int argc, char const *argv[])
 	for (i=0; i < femmes; ++i)
 	{
 		n = rand() % hommes;
-		if(DEBUG_MODE); printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
+		if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
 		generations[gen][i] = females[i]->reproduce(males[n]);
 		printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
 		generations[gen][i].printSexe();
