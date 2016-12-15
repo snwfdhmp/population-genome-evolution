@@ -7,7 +7,7 @@
 //CONFIG
 #define DEBUG_MODE 1
 
-#define CHILD_PER_FEMALE 1
+#define CHILD_PER_FEMALE 3
 
 #define PI 3.141592
 
@@ -115,6 +115,7 @@ int main(int argc, char const *argv[])
 	printf("\n\nFIN de GENERATION\nBILAN :\n\t%d HOMMES\n\t%d FEMMES\n", hommes, femmes);
 
 	int n;
+	int child = 0;
 	int gen = 2;
 	Humain generations[50][50];
 
@@ -126,19 +127,22 @@ int main(int argc, char const *argv[])
 
 		for (i=0; i < femmes; ++i)
 		{
-			n = rand() % hommes;
-			if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
-			generations[gen][i] = females[i]->reproduce(males[n]);
-			if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
-			if(DEBUG_MODE) generations[gen][i].printSexe();
-			if(DEBUG_MODE) printf("\n");
-			if(generations[gen][i].genes[0].speaking() == 1) {
-				males[hommes+newHomme] = &generations[gen][i];
-				newHomme++;
-			}
-			else {
-				females[femmes+newFemme] = &generations[gen][i];
-				newFemme++;
+			for(child = 0; child < CHILD_PER_FEMALE; child++) 
+			{
+				n = rand() % hommes;
+				if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
+				generations[gen][i] = females[i]->reproduce(males[n]);
+				if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
+				if(DEBUG_MODE) generations[gen][i].printSexe();
+				if(DEBUG_MODE) printf("\n");
+				if(generations[gen][i].genes[0].speaking() == 1) {
+					males[hommes+newHomme] = &generations[gen][i];
+					newHomme++;
+				}
+				else {
+					females[femmes+newFemme] = &generations[gen][i];
+					newFemme++;
+				}
 			}
 		}
 		hommes+=newHomme;
