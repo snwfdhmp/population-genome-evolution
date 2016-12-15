@@ -4,10 +4,17 @@
 #include "Gene.h"
 #include "Humain.h"
 
+//CONFIG
+#define DEBUG_MODE FALSE
+
 #define PI 3.141592
+#define FALSE 0
+#define TRUE 1
 
 #define X 0
 #define Y 1
+
+
 
 /*typedef struct {
 	long double r; //radius
@@ -116,7 +123,7 @@ int main(int argc, char const *argv[])
 	for (i=0; i < femmes; ++i)
 	{
 		n = rand() % hommes;
-		printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
+		if(DEBUG_MODE); printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
 		generations[gen][i] = females[i]->reproduce(males[n]);
 		printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
 		generations[gen][i].printSexe();
