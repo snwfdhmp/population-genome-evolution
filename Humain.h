@@ -3,9 +3,9 @@
 class Humain
 {
 public:
-	Humain* pere;
-	Humain* mere;
-	Humain* enfants;
+	Humain* father;
+	Humain* mother;
+	Humain* children;
 
 	int lastGene;
 	Gene genes[1];

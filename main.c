@@ -84,6 +84,8 @@ int main(int argc, char const *argv[])
 
 	int i;
 	int hommes = 0, femmes = 0;
+	Humain* males[50];
+	Humain* females[50];
 	Humain firstHumans[50];
 
 	for (i = 0; i < 50; ++i)
@@ -94,14 +96,36 @@ int main(int argc, char const *argv[])
 		firstHumans[i].printSexe();
 		printf("\n");
 		if(firstHumans[i].genes[0].speaking() == 1) {
+			males[hommes] = &firstHumans[i];
 			hommes++;
 		}
 		else {
+			females[femmes] = &firstHumans[i];
 			femmes++;
 		}
 	}
 
 	printf("\n\nFIN de GENERATION\nBILAN :\n\t%d HOMMES\n\t%d FEMMES\n", hommes, femmes);
+
+	int n;
+	int gen = 2;
+	Humain generations[50][50];
+
+	for (i=0; i < femmes; ++i)
+	{
+		n = rand() % hommes;
+		printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
+		generations[gen][i] = females[i]->reproduce(males[n]);
+		printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
+		generations[gen][i].printSexe();
+		printf("\n");
+		if(generations[gen][i].genes[0].speaking() == 1) {
+			//hommes++;
+		}
+		else {
+			//femmes++;
+		}
+	}
 
 	return 0;
 }

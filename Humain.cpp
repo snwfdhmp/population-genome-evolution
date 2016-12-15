@@ -31,6 +31,8 @@ int Humain::setNextGene(Gene g) {
 Humain Humain::reproduce(Humain* pere) {
 	int i;
 	Humain child;
+	child.mother = this;
+	child.father = pere;
 	for(i = 0; i <= lastGene; i++) {
 		Gene childGene;
 		int motherGenes[2];
