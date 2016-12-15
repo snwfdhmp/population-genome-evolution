@@ -47,6 +47,7 @@ void fillWorld(Universe* uni) {
 
 int main(int argc, char const *argv[])
 {
+	srand(time(NULL));
 	Gene sexeh;
 	Gene sexef;
 	Humain adam;
@@ -76,6 +77,31 @@ int main(int argc, char const *argv[])
 	martin.printSexe();
 
 	printf("\n");
+
+	printf("GENERATION de POPULATION de TAILLE = 50\n");
+	printf("\tà partir de : REPRODUCTION de EVE par ADAM\n");
+	printf("\tgènes testés : SEXE");
+
+	int i;
+	int hommes = 0, femmes = 0;
+	Humain firstHumans[50];
+
+	for (i = 0; i < 50; ++i)
+	{
+		printf("GENERATION HUMAIN N°%d ...\n", i);
+		firstHumans[i] = eve.reproduce(&adam);
+		printf("SEXE : ");
+		firstHumans[i].printSexe();
+		printf("\n");
+		if(firstHumans[i].genes[0].speaking() == 1) {
+			hommes++;
+		}
+		else {
+			femmes++;
+		}
+	}
+
+	printf("\n\nFIN de GENERATION\nBILAN :\n\t%d HOMMES\n\t%d FEMMES\n", hommes, femmes);
 
 	return 0;
 }

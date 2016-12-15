@@ -44,7 +44,6 @@ int Gene::setAlleleR(int a) {
 //Class Methods
 int Gene::createFromParents(int geneM[2], int geneF[2]){
 	int u,v;
-	srand(time(NULL));
 
 	u = rand() % 2; //a random number
 	v = rand() % 2; //another random number
