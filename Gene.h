@@ -1,7 +1,6 @@
 //types
 #ifndef DEF_GENE
 #define DEF_GENE
-#define COULEUR_YEUX 1
 
 
 class Gene
@@ -21,9 +20,14 @@ public:
 	void printAlleles();
 
 	//Getter
+	int alleleL();
+	int alleleR();
 
 	//Setter
-	int setAlleleG(int a);
-	int setAlleleD(int a);
+	int setAlleleL(int a);
+	int setAlleleR(int a);
+
+	//Class Methods
+	Gene createFromParents(int geneML, int geneMR, int geneFL, int geneFR);
 };
 #endif

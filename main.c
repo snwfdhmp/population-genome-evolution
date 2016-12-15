@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Gene.h"
-//#include "Humain.h"
+#include "Humain.h"
 
 #define PI 3.141592
+
+#define X 0
+#define Y 1
 
 /*typedef struct {
 	long double r; //radius
@@ -45,12 +48,17 @@ void fillWorld(Universe* uni) {
 int main(int argc, char const *argv[])
 {
 	Gene yeux;
-	yeux.setAlleleG(1);
-	yeux.setAlleleD(0);
+	Humain adam;
 
+	yeux.setAlleleL(X);
+	yeux.setAlleleR(Y);
 
-	printf("Alleles : %d et %d\n", yeux.alleles[0], yeux.alleles[1]);
+	yeux.printAlleles();
 	yeux.sortAlleles();
+	yeux.printAlleles();
+	printf("Dominant : %d\n", yeux.speaking());
 
+	adam.setNextGene(yeux);
+	adam.printGene(0);
 	return 0;
 }
