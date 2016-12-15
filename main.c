@@ -59,11 +59,11 @@ int main(int argc, char const *argv[])
 	Humain eve;
 	Humain martin;
 
-	printf("Création du sexe homme ... liste des allèles : X, Y\n");
+	if(DEBUG_MODE) printf("Création du sexe homme ... liste des allèles : X, Y\n");
 	sexeh.setAlleleL(X);
 	sexeh.setAlleleR(Y);
 
-	printf("Création du sexe femme ... liste des allèles : X, X\n");
+	if(DEBUG_MODE) printf("Création du sexe femme ... liste des allèles : X, X\n");
 	sexef.setAlleleL(X);
 	sexef.setAlleleR(X);
 
@@ -75,8 +75,8 @@ int main(int argc, char const *argv[])
 	printf("CREATION DE MARTIN à partir de REPRODUCTION de EVE par ADAM\n");
 	martin = eve.reproduce(&adam);
 
-	printf("AFFICHAGE de GENE SEXUEL de MARTIN\n");
-	martin.printGene(0);
+	if(DEBUG_MODE) printf("AFFICHAGE de GENE SEXUEL de MARTIN\n");
+	if(DEBUG_MODE) martin.printGene(0);
 
 	printf("AFFICHAGE de SEXE de MARTIN : ");
 	martin.printSexe();
@@ -95,11 +95,11 @@ int main(int argc, char const *argv[])
 
 	for (i = 0; i < 50; ++i)
 	{
-		printf("GENERATION HUMAIN N°%d ...\n", i);
+		if(DEBUG_MODE) printf("GENERATION HUMAIN N°%d ...\n", i);
 		firstHumans[i] = eve.reproduce(&adam);
-		printf("SEXE : ");
+		if(DEBUG_MODE) printf("SEXE : ");
 		firstHumans[i].printSexe();
-		printf("\n");
+		if(DEBUG_MODE) printf("\n");
 		if(firstHumans[i].genes[0].speaking() == 1) {
 			males[hommes] = &firstHumans[i];
 			hommes++;
@@ -123,9 +123,9 @@ int main(int argc, char const *argv[])
 		n = rand() % hommes;
 		if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
 		generations[gen][i] = females[i]->reproduce(males[n]);
-		printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
+		if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
 		generations[gen][i].printSexe();
-		printf("\n");
+		if(DEBUG_MODE) printf("\n");
 		if(generations[gen][i].genes[0].speaking() == 1) {
 			newHomme++;
 		}
