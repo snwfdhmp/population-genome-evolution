@@ -34,10 +34,12 @@ public:
 		Humain child;
 		for(i = 0; i <= lastGene; i++) {
 			Gene childGene;
-			int motherGenes = [alleleL(), alleleR()];
-			int fatherGenes = [pere->alleleL(), pere->alleleR()];
+			int motherGenes[1] = {genes[i].alleleL(), genes[i].alleleR()};
+			int fatherGenes[1] = {pere->genes[i].alleleL(), pere->genes[i].alleleR()};
 			childGene.createFromParents(motherGenes, fatherGenes]); // parameters Mother[], Father[]
+			child.setNextGene(childGene);
 		}
+		return child;
 	}
 
 };

@@ -28,6 +28,6 @@ public:
 	int setAlleleR(int a);
 
 	//Class Methods
-	Gene createFromParents(int geneML, int geneMR, int geneFL, int geneFR);
+	Gene createFromParents(int geneM[1], int geneF[1]);
 };
 #endif

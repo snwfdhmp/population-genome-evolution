@@ -47,18 +47,24 @@ void fillWorld(Universe* uni) {
 
 int main(int argc, char const *argv[])
 {
-	Gene yeux;
+	Gene sexeh;
+	Gene sexef;
 	Humain adam;
+	Humain eve;
+	Humain martin;
 
-	yeux.setAlleleL(X);
-	yeux.setAlleleR(Y);
+	sexeh.setAlleleL(X);
+	sexeh.setAlleleR(Y);
 
-	yeux.printAlleles();
-	yeux.sortAlleles();
-	yeux.printAlleles();
-	printf("Dominant : %d\n", yeux.speaking());
+	sexef.setAlleleL(X);
+	sexef.setAlleleR(X);
 
-	adam.setNextGene(yeux);
-	adam.printGene(0);
+	adam.setNextGene(sexeh);
+	eve.setNextGene(sexef);
+
+	martin = eve.reproduce(&adam);
+
+	
+
 	return 0;
 }
