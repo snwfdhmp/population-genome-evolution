@@ -98,7 +98,7 @@ int main(int argc, char const *argv[])
 		if(DEBUG_MODE) printf("GENERATION HUMAIN N°%d ...\n", i);
 		firstHumans[i] = eve.reproduce(&adam);
 		if(DEBUG_MODE) printf("SEXE : ");
-		firstHumans[i].printSexe();
+		if(DEBUG_MODE) firstHumans[i].printSexe();
 		if(DEBUG_MODE) printf("\n");
 		if(firstHumans[i].genes[0].speaking() == 1) {
 			males[hommes] = &firstHumans[i];
@@ -124,7 +124,7 @@ int main(int argc, char const *argv[])
 		if(DEBUG_MODE) printf("FEMME N°%d SE REPRODUIT AVEC HOMME N°%d\n", i, n);
 		generations[gen][i] = females[i]->reproduce(males[n]);
 		if(DEBUG_MODE) printf("CREATION de N°%d (GENERATION : %d) SEXE : ", i , gen);
-		generations[gen][i].printSexe();
+		if(DEBUG_MODE) generations[gen][i].printSexe();
 		if(DEBUG_MODE) printf("\n");
 		if(generations[gen][i].genes[0].speaking() == 1) {
 			newHomme++;
