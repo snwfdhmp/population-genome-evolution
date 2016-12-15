@@ -7,7 +7,7 @@
 //CONFIG
 #define DEBUG_MODE 1
 
-#define CHILD_PER_FEMALE 3
+#define CHILD_PER_FEMALE 2
 
 #define PI 3.141592
 
