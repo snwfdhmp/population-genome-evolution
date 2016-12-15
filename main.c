@@ -127,13 +127,19 @@ int main(int argc, char const *argv[])
 		if(DEBUG_MODE) generations[gen][i].printSexe();
 		if(DEBUG_MODE) printf("\n");
 		if(generations[gen][i].genes[0].speaking() == 1) {
+			males[hommes+newHomme] = &generations[gen][i];
 			newHomme++;
 		}
 		else {
+			females[femmes+newFemme] = &generations[gen][i];
 			newFemme++;
 		}
 	}
+	hommes+=newHomme;
+	femmes+=newFemme;
 	printf("NOUVEAUX HOMMES : %d\nNOUVELLES FEMMES : %d\n", newHomme, newFemme);
+	newHomme = 0;
+	newFemme = 0;
 
 	return 0;
 }
