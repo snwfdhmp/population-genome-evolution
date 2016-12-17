@@ -2,12 +2,30 @@
 #include "Gene.h"
 #include <stdio.h>
 
+//Creaters
+Humain Humain::createFromReproduce(Humain* theMother, Humain* theFather) {
+	int i;
+	mother = theMother;
+	father = theFather;
+	for(i = 0; i <= theMother->lastGene; i++) {
+		Gene childGene;
+		int motherGenes[2];
+		motherGenes[0] = theMother->genes[i].alleleL();
+		motherGenes[1] = theMother->genes[i].alleleR();
+		int fatherGenes[2];	
+		fatherGenes[0] = theFather->genes[i].alleleL();
+		fatherGenes[1] = theFather->genes[i].alleleR();
+		childGene.createFromParents(motherGenes, fatherGenes); // parameters Mother[], Father[]
+		setNextGene(childGene);
+	}
+	return *this;
+}
 
 //sorter
 
 //printer
 void Humain::printGene(int i) {
-	printf("Gene n°%d : TYPE %d ; DOMINANT : %d ; ALLELE_D : %d\n",i, genes[i].type, genes[i].speaking(), genes[i].alleleR());
+	printf("Gene n°%d : TYPE %d ; DOMINANT : %d ; ALLELE_D : %d\n", i, genes[i].type, genes[i].speaking(), genes[i].alleleR());
 }
 
 void Humain::printSexe() {
@@ -28,11 +46,13 @@ int Humain::setNextGene(Gene g) {
 }
 
 //Class Methods
-Humain Humain::reproduce(Humain* pere) {
+Humain Humain::reproduce(Humain* pere) { //Fonction obsolète
 	int i;
-	Humain child;
+	Humain child; 
+
 	child.mother = this;
 	child.father = pere;
+
 	for(i = 0; i <= lastGene; i++) {
 		Gene childGene;
 		int motherGenes[2];
