@@ -23,6 +23,9 @@ Humain Humain::createFromReproduce(Humain* theMother, Humain* theFather) {
 
 //sorter
 
+
+
+
 //printer
 void Humain::printGene(int i) {
 	printf("Gene n°%d : TYPE %d ; DOMINANT : %d ; ALLELE_D : %d\n", i, genes[i].type, genes[i].speaking(), genes[i].alleleR());
@@ -38,12 +41,23 @@ void Humain::printSexe() {
 }
 //getter
 
+
+
 //setter
 int Humain::setNextGene(Gene g) {
 	genes[lastGene+1] = g;
 	lastGene++;
 	return lastGene;
 }
+
+
+
+//tester
+bool isMyParent(Humain* parent) {
+		return ((father == parent) || (mother == parent));
+	}
+
+
 
 //Class Methods
 Humain Humain::reproduce(Humain* pere) { //Fonction obsolète
