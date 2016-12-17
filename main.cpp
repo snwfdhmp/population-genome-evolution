@@ -5,9 +5,9 @@
 #include "Humain.h"
 
 //CONFIG
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
-#define CHILD_PER_FEMALE 2
+#define CHILD_PER_FEMALE 5
 
 #define PI 3.141592
 
