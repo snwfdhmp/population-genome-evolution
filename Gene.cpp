@@ -14,7 +14,7 @@ void Gene::sortAlleles() {
 }
 
 int Gene::speaking() {
-	sortAlleles();
+	//sortAlleles();
 	return alleles[0];
 }
 

@@ -1,4 +1,6 @@
 #include "Gene.h"
+#define GENOME_LENGTH 1
+
 
 class Humain
 {
@@ -9,7 +11,7 @@ public:
 	//Humain* children; //non défini pour le moment. Censé être un tableau contenant des pointeurs vers les enfants
 
 	int lastGene; //index du dernier gène créé
-	Gene genes[1]; // Génome (tableau contenant les gènes)
+	Gene genes[GENOME_LENGTH]; // Génome (tableau contenant les gènes)
 
 	//pointeurs vers gènes
 	//int* sexe; //genes[0].speaking();

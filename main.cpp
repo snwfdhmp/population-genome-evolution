@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #include "Gene.h"
 #include "Humain.h"
 
@@ -65,7 +66,12 @@ void fillWorld(Universe* uni) {
 
 int main(int argc, char const *argv[])
 {
-	srand(time(NULL)); //
+	time_t timer, timer_end; //un timer
+	double duree = 0;
+
+	srand(time(NULL)); //pour le rand()
+
+
 	Gene sexeh; // Création du gène sexe homme, on lui assignera X et Y comme allèles (Y étant dominant)
 	Gene sexef; // Création du gène sexe femme, .. X et X
 	Humain adam; // Création des deux premiers humains (aucun lien religieux ou théologique pour leurs noms)
@@ -94,19 +100,19 @@ int main(int argc, char const *argv[])
 	printf("AFFICHAGE de SEXE de MARTIN : ");
 	martin.printSexe();
 
-	printf("\n");
+	/*printf("\n");
 
 	printf("GENERATION de POPULATION de TAILLE = 50\n");
 	printf("\tà partir de : REPRODUCTION de EVE par ADAM\n");
-	printf("\tgènes testés : SEXE");
+	printf("\tgènes testés : SEXE");*/
 
 	int i;
-	int hommes = 0, femmes = 0;
-	Humain* males[500000];
+	unsigned long long int hommes = 0, femmes = 0;
+	/*Humain* males[500000];
 	Humain* females[500000];
-	Humain firstHumans[5000];
+	Humain firstHumans[5000];*/	
 
-	for (i = 0; i < 50; ++i)
+	/*for (i = 0; i < 50; ++i)
 	{
 		if(DEBUG_MODE) printf("GENERATION HUMAIN N°%d ...\n", i);
 		firstHumans[i] = eve.reproduce(&adam);
@@ -121,21 +127,46 @@ int main(int argc, char const *argv[])
 			females[femmes] = &firstHumans[i];
 			femmes++;
 		}
-	}
+	}*/
 
-	printf("\n\nFIN de GENERATION\nBILAN :\n\t%d HOMMES\n\t%d FEMMES\n", hommes, femmes);
+	printf("\n\nFIN de GENERATION\nBILAN :\n\t%llu HOMMES\n\t%llu FEMMES\n", hommes, femmes);
 
 	//Teste si Adam est mon père
 	printf("martin.isMyParent(&adam) = %d", martin.isMyParent(&adam));
 
 	int n;
 	int child = 0;
-	int gen = 2;
-	Humain generations[50][50];
+	int gen = 0;
+	const int genMax = 30;
+	//Humain generations[50][50];
 
-	int newHomme = 0;
-	int newFemme = 0;
+	int done = 0;
+	unsigned long long int newHomme = 0;
+	unsigned long long int newFemme = 0;
+	printf("Début de la création de %d génération ...\nTIMER = NOW\n", genMax);
+	time(&timer);
+	Humain baby;
 
+	for(gen = 0; gen <= genMax; gen++) {
+		for(done = 0; done <= femmes; done++) {
+			baby.createFromReproduce(&eve, &adam);
+			if (baby.genes[0].speaking() == 1)
+				newHomme++;
+			else
+				newFemme++;
+		}
+		printf("=========GENERATION %d========\n%llu FEMMES (nouveaux : %llu)\n%llu HOMMES (nouveaux : %llu)\n", gen, newFemme+femmes, newFemme, newHomme+hommes, newHomme);
+		femmes += newFemme;
+		newFemme = 0;
+		hommes += newHomme;
+		newHomme = 0;
+	}
+	gen--;
+	time(&timer_end);
+	duree = difftime(timer_end, timer);
+
+	printf("%llu humain (%d générations) générés en %.lf secondes.\n%llu femmes et %llu hommes ont été générés.\n",femmes+hommes, gen, duree, femmes, hommes);
+	if(DEBUG_MODE) printf("= %llu millions environ\n", (femmes+hommes)/1000000);
 	/* Boucle : génération de générations
 	for (gen = 2; gen <= 2; ++gen)
 	{
@@ -179,8 +210,11 @@ int main(int argc, char const *argv[])
 
 
 
-
 /* FIN */
+/* Le 19/12/16 : Génération de environ 50M d'humains en 5 secondes (5* paris) (génération 40)
+Génération de 6MM (milliards) en 350 sec (génération 50)
+Génération de 
+
 /* Observations :
  - [conditions] S'il n'y a pas de restriction concernant le choix des individus
  	lors d'une reproduction (pas de limitation au couple ou de protection des couples), alors
