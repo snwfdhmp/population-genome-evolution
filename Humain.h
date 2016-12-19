@@ -1,5 +1,5 @@
 #include "Gene.h"
-#define GENOME_LENGTH 1
+#define GENOME_LENGTH 2
 
 
 class Humain
