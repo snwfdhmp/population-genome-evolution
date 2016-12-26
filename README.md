@@ -1,4 +1,4 @@
-![https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true) ![https://img.shields.io/badge/version-alpha-orange.svg(https://img.shields.io/badge/version-alpha-orange.svg)]
+![https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true) ![https://img.shields.io/badge/version-alpha-orange.svg](https://img.shields.io/badge/version-alpha-orange.svg)
 
 # Universe Simulator
 
