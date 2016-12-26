@@ -5,14 +5,11 @@
 - [Présentation](#presentation)
   - [Principe](#principe)
   - [Objectif](#objectif)
-- [Getting started](#getting-started)
-  - [Installation](#installation)
-  - [Quickstart](#quickstart)
-  - [Command-line arguments](#command-line-arguments)
-  - [Persistence](#persistence)
-- [Maintenance](#maintenance)
-  - [Upgrading](#upgrading)
-  - [Shell Access](#shell-access)
+- [Dernières nouveautées](#logs)
+- [Infos supplémentaires](#infosup)
+  - [Observations](#observations)
+- [Remerciements](#thanks)
+  - [Librairies](#libs)
 
 <h2 id="presentation">Présentation</h2>
 <h3 id="principe">Principe</h3>
@@ -25,7 +22,7 @@ A terme, et dans une optique où les objectifs seraient atteints, ce programme p
 
 
 
-<h2>Logs des changements</h2>
+<h2 id="logs">Logs des changements</h2>
 
 <h3> Le 27/12/16 : </h3>
 - Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
@@ -48,15 +45,13 @@ Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON 
 - Génération de 6MM (milliards) en 350 sec (génération 50) (précision 50.00088~ (plus c'est proche de 50, mieux c'est)
 - Génération de 87MM en 5570 sec (43845550478f; 43847180493h) précision (49.99907~)
 
-
-
-
-<h1>Observations :</h1>
+<h1 id="infosup">Infos supplémentaires</h1>
+<h3 id="observations">Observations :</h3>
  - [conditions] S'il n'y a pas de restriction concernant le choix des individus
  	lors d'une reproduction (pas de limitation au couple ou de protection des couples), alors
  	le nombre d'hommes a une importance fortement négligeable si le but est d'assurer
  	une expansion de la population mondiale sur une longue période.
 
-<h1>Remerciements</h1>
-<h3>Librairies utilisées :</h3>
+<h1 id="thanks">Remerciements</h1>
+<h3 id="libs">Librairies utilisées :</h3>
 - jansson (décodage du JSON des gènes)
