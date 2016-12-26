@@ -232,8 +232,9 @@ int main(int argc, char const *argv[])
 
 /* FIN */
 /* Le 19/12/16 : Génération de environ 50M d'humains en 5 secondes (5* paris) (génération 40)
-Génération de 6MM (milliards) en 350 sec (génération 50) (précision 50.00088~)
-Génération de 87MM en 5570 sec (43845550478f; 43847180493h) précision (49.99907~)
+Génération de 6MM (milliards) en 350 sec (génération 50) (ratio f/total 50.00088~)
+Génération de 87MM en 5570 sec (43845550478f; 43847180493h) (ratio f/total 49.99907~)
+Génération de 162MM en 9818 sec (81354989090f; 81351988999h) (ratio f/total 50.00092~)
 
 */
 /* Observations :

@@ -1,4 +1,4 @@
-//types
+//type_ids
 #ifndef DEF_GENE
 #define DEF_GENE
 
@@ -8,11 +8,12 @@ class Gene
 public:
 
 	//Gene();
-	int type; //définit grâces aux constantes de prépocesseur 
+	int type_id; //définit grâces aux constantes de prépocesseur UPDATE : bientot définit grace au fichier JSON
 	int alleles[2]; //tableau contenant l'ensemble des alleles
+	char type_string[80];
 
 	Gene() {
-		type = 0;
+		type_id = 0;
 	}
 
 	//Sorter

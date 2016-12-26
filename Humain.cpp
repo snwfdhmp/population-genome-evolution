@@ -34,7 +34,7 @@ Humain Humain::createFromReproduce(Humain* theMother, Humain* theFather) {
 
 //printer
 void Humain::printGene(int i) {
-	printf("Gene n°%d : TYPE %d ; DOMINANT : %d ; ALLELE_D : %d\n", i, genes[i].type, genes[i].speaking(), genes[i].alleleR());
+	printf("Gene n°%d : TYPE %s ; DOMINANT : %d ; ALLELE_D : %d\n", i, genes[i].type_string, genes[i].speaking(), genes[i].alleleR());
 }
 
 void Humain::printSexe() {

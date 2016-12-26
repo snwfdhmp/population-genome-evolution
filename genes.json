@@ -1,0 +1,12 @@
+[
+	{
+		"type-string":"sexe",
+		"type-id":0,
+		"values":[0,1]
+	},
+	{
+		"type-string":"couleur-peau",
+		"type-id":1,
+		"values":[0,1]
+	}
+]

@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+#include <jansson.h>
 
 #include "Gene.h"
 #include "Humain.h"
+#include "GeneFile.h"
 
 //CONFIG
 #define DEBUG_MODE 1
+#define GENES_PATH "genes.json"
 
 #define GENMAX 40 // nombre de génération à créer
 #define INIT_POP_TAILLE 20 // taille de population initiale
@@ -25,6 +29,7 @@
 #define COULEUR_PEAU_BLANC 0
 #define COULEUR_PEAU_NOIR 1
 
+
 /*
 
 README :
@@ -37,6 +42,27 @@ pourrait permettre de visualiser certaines possibilités d'évolution de notre
 société dans le futur avec précision.
 
 */
+
+int fillUniGenome(Gene** unigenome, char* pathToFile) {
+	int i;
+	GeneFile fichierGene;
+	int* genesInfos;
+	unsigned int numberOfGenes;
+
+	if(fichierGene.open(pathToFile) == 1) //si l'ouverture de fichier n'a pas fonctionné
+		exit(1); //alors on coupe
+
+	fichierGene.giveGeneList();
+	numberOfGenes = fichierGene.getNumberOfGenes();
+	
+	printf("Total number of genes : %d\n", numberOfGenes);
+	
+	genesInfos = (int*) malloc (sizeof(int)*numberOfGenes);
+	for(i=0; i < numberOfGenes; i++) {
+		
+	}
+	return 0;
+}
 
 
 int main(int argc, char const *argv[])
@@ -51,11 +77,15 @@ int main(int argc, char const *argv[])
 
 	//Population
 	Humain populationInitiale[INIT_POP_TAILLE];
+	GeneFile genefichier;
 
-	// Creation des differents genes generiques
+	char path[] = "genes.json";
+	genefichier.open(path);
 
-	 // Création du gène sexe homme, on lui assignera X et Y comme allèles (Y étant dominant)
-	 // Création du gène sexe femme, .. X et X
+	//Creation des differents genes generiques
+
+	//Création du gène sexe homme, on lui assignera X et Y comme allèles (Y étant dominant)
+	//Création du gène sexe femme, .. X et X
 	unsigned int nbrGenes[GENOME_LENGTH] = {2,2};
 	Gene sexe[2];
 	Gene sexe_homme, sexe_femme;
@@ -67,9 +97,7 @@ int main(int argc, char const *argv[])
 
 	Gene genome_entier[GENOME_LENGTH][50];
 
-
-
-
+/*
 
 	if(DEBUG_MODE) printf("Création du sexe homme ... liste des allèles : X, Y\n");
 	sexe_homme.setAlleleL(X); //ici on set l'allèle gauche sur X (0)
@@ -156,7 +184,7 @@ int main(int argc, char const *argv[])
 
 	printf("%llu humain (%d générations) générés en %.lf secondes.\n%llu femmes et %llu hommes ont été générés.\n",femmes+hommes, gen, duree, femmes, hommes);
 	if(DEBUG_MODE) printf("= %llu millions environ\n", (femmes+hommes)/1000000);
-	
+	*/
 	return 0;
 }
 
