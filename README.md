@@ -18,6 +18,11 @@ Le 19/12/16 :
 - Génération de 6MM (milliards) en 350 sec (génération 50) (précision 50.00088~ (plus c'est proche de 50, mieux c'est)
 - Génération de 87MM en 5570 sec (43845550478f; 43847180493h) précision (49.99907~)
 
+Du 21 au 27/12/16 :
+Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
+Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON est de pouvoir aggrandir la génération à d'autres gènes que le sexe, et donc commencer à étudier l'évolution de populations selon plusieurs caractères.
+
+
 Observations :
  - [conditions] S'il n'y a pas de restriction concernant le choix des individus
  	lors d'une reproduction (pas de limitation au couple ou de protection des couples), alors
