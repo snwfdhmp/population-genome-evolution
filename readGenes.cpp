@@ -6,7 +6,7 @@
 #include "Gene.h"
 #include "Humain.h"
 
-#define NBRHUMAINS 500
+#define NBRHUMAINS 40296
 
 int main () {
 	srand(time(NULL));
@@ -36,7 +36,7 @@ int main () {
 
 	printf("On va créer des humains aléatoires.\nNOMBRE d'HUMAINS CREES : %u\n", NBRHUMAINS);
 	for(i=0; i < NBRHUMAINS; i++) {
-		printf("Création humain n°%d\n", i);
+		printf("Création humain n°%d\n", i+1);
 		for(j=0; j<nombreGenes; j++) {
 			pop[i].genes[j].setType(genome[j].type);
 			n = rand() % genome[j].taille();
