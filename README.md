@@ -33,7 +33,7 @@ A terme, et dans une optique où les objectifs seraient atteints, ce programme p
 - Bug "maximum d'humains" résolu en changeant l'allocation statique du tableau d'humains en une allocation dynamique.
 
 <h3> IMPORTANT</h3>
-Un fichier log.out a été ajouté qui contient les logs d'une session minimalisée (pour que le fichier soit plus léger à uploader) (par exemple le nombre d'humains à générer a été réduit de 90%)
+Un [fichier log.out](https://raw.githubusercontent.com/snwfdhmp/UniverseSimulation/master/log.out) a été ajouté qui contient les logs d'une session minimalisée (pour que le fichier soit plus léger à uploader) (par exemple le nombre d'humains à générer a été réduit de 90%)
 
 <h3> Du 21 au 27/12/16 : </h3>
 Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
