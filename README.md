@@ -14,7 +14,9 @@
 <h2 id="presentation">Présentation</h2>
 <h3 id="principe">Principe</h3>
 Le principe de ce programme est de recréer le principe d'évolution au niveau microscopique par rapport au temps (à échelle humaine) et de voir de quelle manière les hommes sont ammenés à évoluer en utilisant les principes de fécondation et de brassage chromosomiques.
+
 Ce programme fait parti du projet "Universe Simulation", qui vise à pouvoir recréer une petite portion de notre monde actuel sous forme de simulation.
+
 Pour voir ce que fait le programme de manière concrète, vous pouvez jeter un oeil au [fichier de logs](https://raw.githubusercontent.com/snwfdhmp/UniverseSimulation/master/log.out) qui est une version écourtée des informations affichées par le programme lorsqu'il est éxécuté.
 <h3 id="objectif">Objectif</h3>
 A terme, et dans une optique où les objectifs seraient atteints, ce programme pourrait permettre de visualiser certaines possibilités d'évolution de notre société dans le futur avec précision.
@@ -35,6 +37,7 @@ Un [fichier log.out](https://raw.githubusercontent.com/snwfdhmp/UniverseSimulati
 
 <h3> Du 21 au 27/12/16 : </h3>
 Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
+
 Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON est de pouvoir aggrandir la génération à d'autres gènes que le sexe, et donc commencer à étudier l'évolution de populations selon plusieurs caractères.
 
 <h3> Le 19/12/16 : </h3>
