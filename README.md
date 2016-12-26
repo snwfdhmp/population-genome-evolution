@@ -1,19 +1,13 @@
-# UniverseSimulation
-
-
 <h1>Présentation</h1>
-Le but de ce programme est en fait de recréer le principe
-d'évolution au niveau microscopique par rapport au temps (à échelle humaine)
-et de voir de quelle manière les hommes sont ammenés à évoluer.
-A terme, et dans une optique où les objectifs seraient atteints, ce programme
-pourrait permettre de visualiser certaines possibilités d'évolution de notre
-société dans le futur avec précision.
+Le but de ce programme est de recréer le principe d'évolution au niveau microscopique par rapport au temps (à échelle humaine) et de voir de quelle manière les hommes sont ammenés à évoluer en utilisant les principes de fécondation et de brassage chromosomiques.
+<h3>But</h3>
+A terme, et dans une optique où les objectifs seraient atteints, ce programme pourrait permettre de visualiser certaines possibilités d'évolution de notre société dans le futur avec précision.
 
 
 
 
 
-<h3>Changes</h3>
+<h1>Changes</h1>
 Le 19/12/16 : 
 - La précision est actuellement de 75. L'objectif du jour sera de la rapprocher de 50 au maximum et d'accélérer la génération des humains.
 - Génération de environ 50M d'humains en 5 secondes (5* paris) (génération 40)
