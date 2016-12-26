@@ -1,6 +1,11 @@
 #ifndef GENE_FILE
 #define GENE_FILE
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Structures.h"
+
 class GeneFile {
 public:
 	char path[80]; //stocke le path
@@ -67,7 +72,7 @@ public:
 	}
 	int giveGeneList() {
 
-		printf("Liste des gènes :\n");
+		printf("AFFICHAGE de la LISTE DES GENES :\n");
 		for(i = 0; i < json_array_size(root); i++)
 		{
 			json_t *data, *type_string, *type_id, *alleles;
@@ -98,7 +103,7 @@ public:
 				if(j+1 < json_array_size(alleles))
 					printf(", ");
 			}
-			printf("\n");
+			printf("]\n");
 
 		}
 		return 0;
@@ -106,14 +111,25 @@ public:
 	int getNumberOfGenes() {
 		return json_array_size(root);
 	}
-	int* getInfosFromGene(int geneIndexInFile) {
-		int infos[2]; // 0 : type_id, 1 : number of alleles
+	TypeGene getTypeGene(int geneIndexInFile) {
+		unsigned long int type;
+		unsigned short int taille, i;
+		unsigned short int* poss;
 		json_t *data, *alleles;
+
 		data = json_array_get(root, geneIndexInFile);
 		alleles = json_object_get(data, "values");
-		infos[0] = json_number_value(json_object_get(data, "type-id"));
-		infos[1] = json_array_size(alleles);
-		return infos;
+		taille = json_array_size(alleles);
+		type = json_number_value(json_object_get(data, "type-id"));
+
+		poss = (unsigned short int*) malloc(sizeof(unsigned short int)*taille);
+
+		for(i = 0; i < taille; i++) {
+			poss[i] = json_number_value(json_array_get(alleles, i));
+		}
+
+		TypeGene newGene = TypeGene(type, taille, poss);
+		return newGene;
 	}
 
 

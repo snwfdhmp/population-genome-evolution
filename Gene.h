@@ -8,7 +8,7 @@ class Gene
 public:
 
 	//Gene();
-	int type_id; //définit grâces aux constantes de prépocesseur UPDATE : bientot définit grace au fichier JSON
+	int type_id; //définit grâces aux constantes de prépocesseur UPDATE : bientot définit grace au fichier JSON UPDATE : définit par JSON
 	int alleles[2]; //tableau contenant l'ensemble des alleles
 	char type_string[80];
 
@@ -27,8 +27,9 @@ public:
 	int alleleR();
 
 	//Setter
-	int setAlleleL(int a);
-	int setAlleleR(int a);
+	void setAlleleL(int a);
+	void setAlleleR(int a);
+	void setType(int a);
 
 	//Class Methods
 	int createFromParents(int geneM[2], int geneF[2]);

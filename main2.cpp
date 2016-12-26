@@ -21,13 +21,6 @@
 
 //Valeur gènes
 //{GENE}_{ALLELE}
-#define SEXE_TYPE 0
-#define SEXE_X 0
-#define SEXE_Y 1
-
-#define COULEUR_PEAU_TYPE 1
-#define COULEUR_PEAU_BLANC 0
-#define COULEUR_PEAU_NOIR 1
 
 
 /*
@@ -42,27 +35,6 @@ pourrait permettre de visualiser certaines possibilités d'évolution de notre
 société dans le futur avec précision.
 
 */
-
-int fillUniGenome(Gene** unigenome, char* pathToFile) {
-	int i;
-	GeneFile fichierGene;
-	int* genesInfos;
-	unsigned int numberOfGenes;
-
-	if(fichierGene.open(pathToFile) == 1) //si l'ouverture de fichier n'a pas fonctionné
-		exit(1); //alors on coupe
-
-	fichierGene.giveGeneList();
-	numberOfGenes = fichierGene.getNumberOfGenes();
-	
-	printf("Total number of genes : %d\n", numberOfGenes);
-	
-	genesInfos = (int*) malloc (sizeof(int)*numberOfGenes);
-	for(i=0; i < numberOfGenes; i++) {
-		
-	}
-	return 0;
-}
 
 
 int main(int argc, char const *argv[])

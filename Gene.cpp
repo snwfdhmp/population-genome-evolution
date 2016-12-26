@@ -32,13 +32,16 @@ int Gene::alleleR(){
 }
 
 //Setter
-int Gene::setAlleleL(int a) {
+void Gene::setAlleleL(int a) {
 	alleles[0] = a;
-	return alleles[0];
+	sortAlleles();
 }
-int Gene::setAlleleR(int a) {
+void Gene::setAlleleR(int a) {
 	alleles[1] = a;
-	return alleles[1];
+	sortAlleles();
+}
+void Gene::setType(int a) {
+	type_id = a;
 }
 
 //Class Methods

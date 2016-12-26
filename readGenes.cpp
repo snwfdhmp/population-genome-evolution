@@ -1,91 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <jansson.h>
+#include <time.h>
+#include "GeneFile.h"
+#include "Gene.h"
+#include "Humain.h"
+
+#define NBRHUMAINS 20
 
 int main () {
-	FILE* pFile;
-	long lSize;
-	char* buffer;
-	size_t result;
-	json_t* root;
-	json_error_t error;
-	int i,j;
+	srand(time(NULL));
+	GeneFile fichierGene;
+	TypeGene* genome;
+	Humain pop[NBRHUMAINS];
 
-	pFile = fopen ( "genes.json" , "rb" );
-	if (pFile==NULL) {fputs ("File error",stderr); exit (1);}
+	int i,j,n;
+	char path[] = "genes.json";
 
-	// obtain file size:
-	fseek (pFile , 0 , SEEK_END);
-	lSize = ftell (pFile);
-	rewind (pFile);
+	printf("On commence par lire la liste de gènes...\n");
 
-	// allocate memory to contain the whole file:
-	buffer = (char*) malloc (sizeof(char)*lSize);
-	if (buffer == NULL) {fputs ("Memory error",stderr); exit (2);}
+	
+	//TypeGene couleur;
+	fichierGene.open(path);
+	fichierGene.read();
+	fichierGene.parse();
+	fichierGene.giveGeneList();
 
-	// copy the file into the buffer:
-	result = fread (buffer,1,lSize,pFile);
-	if (result != lSize) {fputs ("Reading error",stderr); exit (3);}
+	const unsigned long int nombreGenes = fichierGene.getNumberOfGenes();
+	genome = (TypeGene*) malloc(sizeof(TypeGene) * nombreGenes);
 
-	/* the whole file is now loaded in the memory buffer. */
-
-	// terminate
-	fclose (pFile);
-
-	//On load le buffer en tant que JSON grace a jansson
-	root = json_loads(buffer, 0, &error);	
-
-	//On teste les erreurs
-	if(!root)
-	{
-		fprintf(stderr, "error: on line %d: %s\n", error.line, error.text);
-		return 1;
+	for(i=0; i < nombreGenes; i++) {
+		genome[i] = fichierGene.getTypeGene(i);
+		genome[i].printTypeGene();
 	}
 
-	//On peut alors vider le buffer
-	free (buffer);
-
-	//Maintenant on va tester les erreurs
-	if(!json_is_array(root))
-	{
-		fprintf(stderr, "error: root is not an array\n");
-		json_decref(root);
-		return 1;
-	}
-
-	printf("Liste des gènes :\n");
-	for(i = 0; i < json_array_size(root); i++)
-	{
-		json_t *data, *type_string, *type_id, *alleles;
-		const char *message_text;
-
-		data = json_array_get(root, i);
-		if(!json_is_object(data))
-		{
-			fprintf(stderr, "error: data %d is not an object\n", i + 1);
-			json_decref(root);
-			return 1;
+	printf("On va créer des humains aléatoires.\nNOMBRE d'HUMAINS CREES : %u\n", NBRHUMAINS);
+	for(i=0; i < NBRHUMAINS; i++) {
+		printf("Création humain n°%d\n", i);
+		for(j=0; j<nombreGenes; j++) {
+			pop[i].genes[j].setType((int)genome[j].type);
+			n = rand() % genome[j].taille();
+			pop[i].genes[j].setAlleleL(genome[j].getNumber(n));
+			n = rand() % genome[j].taille();
+			pop[i].genes[j].setAlleleR(genome[j].getNumber(n));
+			pop[i].printGene(j);
 		}
-
-		type_string=json_object_get(data, "type-string");
-		type_id=json_object_get(data, "type-id");
-		alleles=json_object_get(data, "values");
-
-		/*if(!json_is_object(type))
-		{
-			fprintf(stderr, "error: data %d: type is not an object\n", i + 1);
-			json_decref(root);
-			return 1;
-		}*/
-		printf("TYPE : %s ID : %.f ALLELES : [", json_string_value(type_string), json_number_value(type_id));
-		for (j = 0; j < json_array_size(alleles); ++j)
-		{
-			printf("%.f", json_number_value(json_array_get(alleles, j)));
-			if(j+1 < json_array_size(alleles))
-				printf(", ");
-		}
-		printf("\n");
-		
 	}
+
 	return 0;
 }
