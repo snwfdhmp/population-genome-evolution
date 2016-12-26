@@ -34,11 +34,9 @@ int Gene::alleleR(){
 //Setter
 void Gene::setAlleleL(int a) {
 	alleles[0] = a;
-	sortAlleles();
 }
 void Gene::setAlleleR(int a) {
 	alleles[1] = a;
-	sortAlleles();
 }
 void Gene::setType(int a) {
 	type_id = a;

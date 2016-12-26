@@ -8,15 +8,21 @@ A terme, et dans une optique où les objectifs seraient atteints, ce programme p
 
 
 <h2>Logs des changements</h2>
+
+<h3> Le 27/12/16 : </h3>
+Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
+
+<h3> Du 21 au 27/12/16 : </h3>
+Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
+Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON est de pouvoir aggrandir la génération à d'autres gènes que le sexe, et donc commencer à étudier l'évolution de populations selon plusieurs caractères.
+
 <h3> Le 19/12/16 : </h3>
 - La précision est actuellement de 75. L'objectif du jour sera de la rapprocher de 50 au maximum et d'accélérer la génération des humains.
 - Génération de environ 50M d'humains en 5 secondes (5* paris) (génération 40)
 - Génération de 6MM (milliards) en 350 sec (génération 50) (précision 50.00088~ (plus c'est proche de 50, mieux c'est)
 - Génération de 87MM en 5570 sec (43845550478f; 43847180493h) précision (49.99907~)
 
-<h3> Du 21 au 27/12/16 : </h3>
-Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
-Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON est de pouvoir aggrandir la génération à d'autres gènes que le sexe, et donc commencer à étudier l'évolution de populations selon plusieurs caractères.
+
 
 
 <h1>Observations :</h1>
