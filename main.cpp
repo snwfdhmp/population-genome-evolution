@@ -7,7 +7,7 @@
 #include "Gene.h"
 #include "Humain.h"
 
-#define NBRHUMAINS 500000
+#define NBRHUMAINS 50000
 
 
 void generatePopulation(unsigned long long int taille, Humain* tab, TypeGene* genome, unsigned long long int nombreGenes) {
