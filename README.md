@@ -15,11 +15,9 @@
 <h3 id="principe">Principe</h3>
 Le principe de ce programme est de recréer le principe d'évolution au niveau microscopique par rapport au temps (à échelle humaine) et de voir de quelle manière les hommes sont ammenés à évoluer en utilisant les principes de fécondation et de brassage chromosomiques.
 Ce programme fait parti du projet "Universe Simulation", qui vise à pouvoir recréer une petite portion de notre monde actuel sous forme de simulation.
+Pour voir ce que fait le programme de manière concrète, vous pouvez jeter un oeil au [fichier de logs](https://raw.githubusercontent.com/snwfdhmp/UniverseSimulation/master/log.out) qui est une version écourtée des informations affichées par le programme lorsqu'il est éxécuté.
 <h3 id="objectif">Objectif</h3>
 A terme, et dans une optique où les objectifs seraient atteints, ce programme pourrait permettre de visualiser certaines possibilités d'évolution de notre société dans le futur avec précision.
-
-
-
 
 
 <h2 id="logs">Logs des changements</h2>
