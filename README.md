@@ -10,7 +10,8 @@ A terme, et dans une optique où les objectifs seraient atteints, ce programme p
 <h2>Logs des changements</h2>
 
 <h3> Le 27/12/16 : </h3>
-Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
+- Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
+- Bug des valeurs incorrectes réglé.
 
 <h3> Du 21 au 27/12/16 : </h3>
 Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
