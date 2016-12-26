@@ -10,8 +10,12 @@ A terme, et dans une optique où les objectifs seraient atteints, ce programme p
 <h2>Logs des changements</h2>
 
 <h3> Le 27/12/16 : </h3>
-- Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
+- Le travail sur l'automatisation de l'ajout de gènes est terminé. Il reste quelques bugs à régler, notamment un gène qui apparait sur l'humain n°5 gène n°1 et n°3 (toujours 32767 et 490786309 -> valeurs incorrectes).
 - Bug des valeurs incorrectes réglé.
+- Un nouveau bug a été détecté : le nombre maximum d'humains qu'on peut générer est 40296 (sinon segfault. Nombre trouvé en faisant une simple recherche dichotomique)
+- Structure du projet changée (minor changes)
+- Projet nettoyé et système de fichier refait
+- Bug "maximum d'humains" résolu en changeant l'allocation statique du tableau d'humains en une allocation dynamique.
 
 <h3> Du 21 au 27/12/16 : </h3>
 Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
