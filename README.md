@@ -1,5 +1,5 @@
 ![https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true) ![https://img.shields.io/badge/version-alpha-orange.svg](https://img.shields.io/badge/version-alpha-orange.svg)
-![https://img.shields.io/github/commits-since/SubtitleEdit/subtitleedit/3.4.7.svg](https://img.shields.io/github/commits-since/SubtitleEdit/subtitleedit/3.4.7.svg)
+![https://img.shields.io/github/commits-since/SubtitleEdit/subtitleedit/3.4.7.svg](https://img.shields.io/github/commits-since/snwfdhmp/UniverseSimulation/1.0.svg)
 
 # Universe Simulator
 
