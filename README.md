@@ -3,8 +3,8 @@
 # Universe Simulator
 
 - [Présentation](#presentation)
-  - [Contributing](#contributing)
-  - [Issues](#issues)
+  - [Principe](#principe)
+  - [Objectif](#objectif)
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Quickstart](#quickstart)
@@ -14,9 +14,11 @@
   - [Upgrading](#upgrading)
   - [Shell Access](#shell-access)
 
-<h3>Présentation</h3>
-Le but de ce programme est de recréer le principe d'évolution au niveau microscopique par rapport au temps (à échelle humaine) et de voir de quelle manière les hommes sont ammenés à évoluer en utilisant les principes de fécondation et de brassage chromosomiques.
-<h3>But</h3>
+<h2 id="presentation">Présentation</h2>
+<h3 id="principe">Principe</h3>
+Le principe de ce programme est de recréer le principe d'évolution au niveau microscopique par rapport au temps (à échelle humaine) et de voir de quelle manière les hommes sont ammenés à évoluer en utilisant les principes de fécondation et de brassage chromosomiques.
+Ce programme fait parti du projet "Universe Simulation", qui vise à pouvoir recréer une petite portion de notre monde actuel sous forme de simulation.
+<h3 id="objectif">Objectif</h3>
 A terme, et dans une optique où les objectifs seraient atteints, ce programme pourrait permettre de visualiser certaines possibilités d'évolution de notre société dans le futur avec précision.
 
 
@@ -40,7 +42,7 @@ Un fichier log.out a été ajouté qui contient les logs d'une session minimalis
 Travail sur l'automatisation de l'ajout des gènes. La vitesse de génération est actuellement satisfaisante (Entre 15 et 25 millions par seconde).
 Le but d'ajouter l'automatisation des gènes à travers l'utilisation d'un JSON est de pouvoir aggrandir la génération à d'autres gènes que le sexe, et donc commencer à étudier l'évolution de populations selon plusieurs caractères.
 
-<h3 id="presentation"> Le 19/12/16 : </h3>
+<h3> Le 19/12/16 : </h3>
 - La précision est actuellement de 75. L'objectif du jour sera de la rapprocher de 50 au maximum et d'accélérer la génération des humains.
 - Génération de environ 50M d'humains en 5 secondes (5* paris) (génération 40)
 - Génération de 6MM (milliards) en 350 sec (génération 50) (précision 50.00088~ (plus c'est proche de 50, mieux c'est)
